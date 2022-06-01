@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.spring") version "1.6.10"
 }
 
-group = "ru.gpb.rkk2"
+group = "ru.connector"
 version = "1.0-SNAPSHOT"
 
 repositories {
