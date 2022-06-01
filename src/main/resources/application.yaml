@@ -22,7 +22,7 @@ logging:
   #  pattern.console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
   level:
     ru:
-      connector: ${LOGGING_LEVEL_RU_GPB:INFO}
+      connector: ${LOGGING_LEVEL_RU_CONNECTOR:INFO}
 #    .: error
 
 ## Metadata
