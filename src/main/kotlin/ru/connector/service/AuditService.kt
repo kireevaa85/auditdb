@@ -17,7 +17,7 @@ class AuditService {
 //    @PostConstruct //todo uncomment
     fun run() {
         //Create replication connection
-        val url = "jdbc:postgresql://localhost:5432/postgres"
+        val url = "jdbc:postgresql://localhost:6432/postgres"
         val props = Properties()
         PGProperty.USER.set(props, "postgres")
         PGProperty.PASSWORD.set(props, "postgres")

@@ -70,6 +70,7 @@ class AuditService7 {
                     .withSlotOption("include-lsn", true)
                     .withSlotOption("filter-origins", "")
                     .withSlotOption("filter-tables", "*.databasechangeloglock")
+                    .withSlotOption("include-transaction", false)
                     .withSlotOption("format-version", 2)
                     .withStatusInterval(20, TimeUnit.SECONDS)
                     .start() //org.postgresql.util.PSQLException: ERROR: replication slot "demo_logical_slot999" does not exist
@@ -84,9 +85,6 @@ class AuditService7 {
                     val source: ByteArray = msg.array()
                     val length = source.size - offset
                     val replMsg = String(source, offset, length)
-                    if (replMsg.contains("\"action\":\"B\"") || replMsg.contains("\"action\":\"C\"")) {
-                        continue
-                    }
                     log.info(replMsg)
                     //feedback
                     val lastReceiveLSN = stream.lastReceiveLSN
